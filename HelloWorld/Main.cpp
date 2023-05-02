@@ -3,16 +3,25 @@
 
 int main()
 {
-	int a = 8;
-	a++;
-	const char* string = "Hello";
+	int x = 5;
 
-	for (int i = 0; i < 5; i++)
-	{
-		const char c = string[i];
-		std::cout << c << std::endl;
-	}
+	if (x == 5)
+		Log("Hello World!");
 
-	Log("Hello World!");
+	if (x)
+		Log("Hello World!");
+
+	const char* ptr = "Hello";
+	if (ptr)
+		Log("Hello World!");
+
+	ptr = nullptr;
+	if (ptr)
+		Log(ptr);
+	else if (ptr == "Hello")
+		Log("Ptr is Hello!");
+	else
+		Log("Ptr is null!");
+
 	std::cin.get();
 }
