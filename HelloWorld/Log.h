@@ -1,9 +1,3 @@
-#ifndef _LOG_H
-#define _LOG_H
+#pragma once
 
 void Log(const char* message);
-void InitLog();
-
-struct Player {};
-
-#endif
