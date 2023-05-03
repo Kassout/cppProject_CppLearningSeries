@@ -3,25 +3,39 @@
 
 int main()
 {
-	int x = 5;
-
-	if (x == 5)
+	for (int i = 0; i < 5; i++)
+	{
 		Log("Hello World!");
+	}
 
-	if (x)
+	Log("================================");
+
+	int i = 0;
+	bool condition = true;
+	for (;condition;)
+	{
 		Log("Hello World!");
+		i++;
+		if (!(i < 5))
+			condition = false;
+	}
 
-	const char* ptr = "Hello";
-	if (ptr)
+	Log("================================");
+
+	i = 0;
+	while (i < 5)
+	{
 		Log("Hello World!");
+		i++;
+	}
 
-	ptr = nullptr;
-	if (ptr)
-		Log(ptr);
-	else if (ptr == "Hello")
-		Log("Ptr is Hello!");
-	else
-		Log("Ptr is null!");
+	Log("================================");
+
+	condition = false;
+	do
+	{
+		Log("Hello World!");
+	} while (condition);
 
 	std::cin.get();
 }
