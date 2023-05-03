@@ -2,18 +2,26 @@
 
 #define LOG(x) std::cout << x << std::endl
 
+void Increment(int* value) // use pointer to get the memory address of the variable passed by as parameter so we can modify it.
+{
+	(*value)++; // dereference the value so that we can actually write to that memory instead of modifying the pointer itself
+}
+
+void Increment(int& value) // pass by references, exactly the same thing as above but clearer
+{
+	value++;
+}
+
 int main()
 {
-	int var = 8;
-	int* ptr = &var;
-	*ptr = 10;
-	LOG(var);
+	int a = 5;
+	int& ref = a; // ref is a, Reference is just creating an allias of a to be used as if it was a.
+	ref = 2;
 
-	char* buffer = new char[8]; // => 8 bytes of memory, return a pointer to the beginning of that block of memory
-	memset(buffer, 0, 8);
+	LOG(a);
 
-	char** cptr = &buffer; // => &buffer means get the memory address reference of the integer (pointer) that referenced a 8 bytes of char data
+	Increment(a); // use ampersand to get the memory address reference of that variable
+	LOG(a);
 
-	delete[] buffer;
-	std::cin.get(); // ==> Dead Code
+	std::cin.get();
 }
