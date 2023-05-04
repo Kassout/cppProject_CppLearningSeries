@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Log.cpp" />
     <ClCompile Include="src\Main.cpp" />
     <ClCompile Include="src\Static.cpp" />
   </ItemGroup>
