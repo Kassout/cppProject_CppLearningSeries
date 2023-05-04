@@ -1,11 +1,27 @@
 #include <iostream>
 
-extern int s_Variable;
+struct Entity
+{
+	static int x, y;
 
-void Function();
+	static void Print()
+	{
+		std::cout << x << ", " << y << std::endl;
+	}
+};
+
+int Entity::x;
+int Entity::y;
 
 int main()
 {
-	std::cout << s_Variable << std::endl;
+	Entity::x = 2;
+	Entity::y = 3;
+
+	Entity::x = 5;
+	Entity::y = 8;
+
+	Entity::Print();
+	Entity::Print();
 	std::cin.get();
 }
